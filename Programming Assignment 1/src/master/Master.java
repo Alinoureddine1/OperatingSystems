@@ -30,22 +30,16 @@ public class Master extends Thread {
         }
 
     }
-    public void printDataset(){
-        System.out.println(dataset[0]);
-        // for (String s : dataset) {
-        //     System.out.println(s);
-        // }
-    }
+    
     @Override
     public void run(){
-        int startIndex =0;
-        while(startIndex < nbOfLines){
+        int processedLines = 0;
+        while(processedLines < nbOfLines){
            List <Worker> workers = new ArrayList<>();
-           int endIndex = Math.min(startIndex + workerNumber, nbOfLines);
 
-           for(int i = startIndex; i < endIndex; i++){
-             workers.add(new Worker(i, dataset[i], valnerabilityPattern, this));
-           }
+           for (int i = 0; i < workerNumber && processedLines < nbOfLines; i++, processedLines++) {
+            workers.add(new Worker(i, dataset[processedLines], valnerabilityPattern, this));
+        }
 
             for(Worker worker: workers){
                 worker.start();
@@ -58,7 +52,7 @@ public class Master extends Thread {
                         e.printStackTrace();
                     }
             }
-            startIndex+=workerNumber;
+    
             approximateAvg = count/(double)nbOfLines;
             if(Math.abs(approximateAvg-avg)/avg >0.2){
                 avg = approximateAvg;
@@ -73,6 +67,8 @@ public class Master extends Thread {
 
         }
         System.out.println("The number of vulnerabilities found is: " + count);
+        System.out.println("The average number of vulnerabilities found per line is: " + approximateAvg);
+        System.out.println("The number of workers is: " + workerNumber);
 
        
 
@@ -85,13 +81,8 @@ public class Master extends Thread {
         count++;
     }
 
- // Main method for testing
- public static void main(String[] args) {
-    Master master = new Master();
-    master.printDataset();
-   
+ 
 
-}
     
 }
 

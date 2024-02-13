@@ -6,7 +6,6 @@ public class Worker extends Thread {
   private int workerNumber;
   private String valnerabilityPattern;
   private int patternLength;
-  private Boolean foundMatch;
   private String logField;
   private LevenshteinDistance levenshteinDistance;
   private Master master;
@@ -15,7 +14,6 @@ public class Worker extends Thread {
     this.workerNumber = workerNumber;
     this.valnerabilityPattern = valnerabilityPattern;
     this.patternLength = valnerabilityPattern.length();
-    this.foundMatch = false;
     this.logField =  extractLogPart(logInputData);
     this.levenshteinDistance = new LevenshteinDistance();
     this.master = master;
@@ -36,12 +34,12 @@ public class Worker extends Thread {
 
 
 private void processLogWithPattern(String logPart, String vulnerabilityPattern) {
-    this.foundMatch = false;
   for (int i = 0; i <= logPart.length() - patternLength; i++) {
       String substring = logPart.substring(i, i + patternLength);  
       levenshteinDistance.Calculate(substring, vulnerabilityPattern);
-      if(levenshteinDistance.acceptable_change){
-        foundMatch = true;
+      System.out.println("Worker " + workerNumber + " is processing " + substring + " with " + vulnerabilityPattern + " and the change ratio is " + levenshteinDistance.Change_Ratio);
+      if(levenshteinDistance.isAcceptable_change()){
+        System.out.println("Worker " + workerNumber + " found a match");
         master.incrementCount();
         break;
       }
