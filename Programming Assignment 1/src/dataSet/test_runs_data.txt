@@ -1,0 +1,21 @@
+for vm_1.txt
+
+The number of vulnerabilities found is: 28235
+The average number of vulnerabilities found per line is: 0.141175
+The number of workers is: 94
+
+
+
+for vm_2.txt
+
+The number of vulnerabilities found is: 2
+The average number of vulnerabilities found per line is: 0.1
+The number of workers is: 6
+
+
+for vm_3.txt
+
+
+The number of vulnerabilities found is: 14133
+The average number of vulnerabilities found per line is: 0.14133
+The number of workers is: 86
