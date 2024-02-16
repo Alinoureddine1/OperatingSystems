@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import worker.Worker;
 
+
+
 public class Master extends Thread {
     private static String[] dataset;    // The dataset to be processed
     private static int nbOfLines;    // The number of lines in the dataset
@@ -23,8 +25,11 @@ public class Master extends Thread {
         avg = 0;
         approximateAvg = 0;
         try {
+            // Get the absolute path of the dataset file (had issues running it from other devices without the absolute path)
+            String relativePath = "Programming Assignment 1/src/dataset/vm_1.txt";
+            String absolutePath = Paths.get(relativePath).toAbsolutePath().toString();
             // Read the dataset from the file
-            List<String> lines = Files.readAllLines(Paths.get("programming Assignment 1/src/dataset/vm_1.txt"));
+            List<String> lines = Files.readAllLines(Paths.get(absolutePath));
             dataset = lines.toArray(new String[0]);
             nbOfLines = lines.size();
         } catch (IOException e) { // Handle the case where the file is not found
