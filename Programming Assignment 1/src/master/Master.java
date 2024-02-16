@@ -26,7 +26,7 @@ public class Master extends Thread {
         approximateAvg = 0;
         try {
             // Get the absolute path of the dataset file (had issues running it from other devices without the absolute path)
-            String relativePath = "Programming Assignment 1/src/dataset/vm_1.txt";
+            String relativePath = "OperatingSystems/Programming Assignment 1/src/dataset/vm_1.txt";
             String absolutePath = Paths.get(relativePath).toAbsolutePath().toString();
             // Read the dataset from the file
             List<String> lines = Files.readAllLines(Paths.get(absolutePath));
