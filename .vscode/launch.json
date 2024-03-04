@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DiningPhilosophers",
+            "request": "launch",
+            "mainClass": "DiningPhilosophers",
+            "projectName": "OperatingSystems_3f2e3f02"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
