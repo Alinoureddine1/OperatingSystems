@@ -30,9 +30,19 @@ public class Philosopher extends BaseThread
 		try
 		{
 			System.out.println("Philosopher " + getTID() + " has started eating");
+
+			// Task 5 - Implement Pepper logic
+			if(Math.random() > 0.5){
+				DiningPhilosophers.soMonitor.requestPepper(getTID());
+				usePepperShaker();
+				DiningPhilosophers.soMonitor.releasePepper(getTID());
+				System.out.println("Philosopher " + getTID() + " has finished using the pepper shaker");
+			}
 			yield();
 			sleep((long)(Math.random() * TIME_TO_WASTE));
 			yield();
+			
+			
 			System.out.println("Philosopher " + getTID() + " has finished eating");
 		}
 		catch(InterruptedException e)
@@ -94,6 +104,25 @@ public class Philosopher extends BaseThread
 	}
 
 	/**
+	 * The act of using the pepper shaker
+	 */
+
+	 //Task 5 - Implement the usePepperShaker() method
+
+	 public void usePepperShaker(){
+		System.out.println("Philosopher " + getTID() + " has used the pepper shaker");
+		try{
+			yield();
+			Thread.sleep((long)(Math.random() * TIME_TO_WASTE/2));
+			yield();
+		} catch(InterruptedException e){
+			System.err.println("Philosopher.usePepperShaker():");
+			DiningPhilosophers.reportException(e);
+			System.exit(1);
+		}
+	 }
+
+	/**
 	 * No, this is not the act of running, just the overridden Thread.run()
 	 */
 
@@ -103,20 +132,16 @@ public class Philosopher extends BaseThread
 		for(int i = 0; i < DiningPhilosophers.DINING_STEPS; i++)
 		{
 			DiningPhilosophers.soMonitor.pickUp(getTID());
-
 			eat();
-
+			
 			DiningPhilosophers.soMonitor.putDown(getTID());
-
 			think();
-
 			// Task 2 - Fixed the TID input
 			if(Math.random() > 0.5){
 				DiningPhilosophers.soMonitor.requestTalk(getTID());
 				talk();
 				DiningPhilosophers.soMonitor.endTalk(getTID());
 			}
-
 			yield();
 		}
 	} // run()

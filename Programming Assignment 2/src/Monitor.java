@@ -18,6 +18,8 @@ public class Monitor
 	private State[] state;
 	private int numberOfPhilosophers;
 	private boolean talking;
+	private boolean[] pepper	= {true, true};
+	private int[] shakerAssignedTo = {-1, -1};
 	private boolean[] chopsticks;
 	
 
@@ -27,7 +29,7 @@ public class Monitor
 	 */
 	public Monitor(int piNumberOfPhilosophers)
 	{
-		// TODO: set appropriate number of chopsticks based on the # of philosophers
+
 		numberOfPhilosophers = piNumberOfPhilosophers;
 		state = new State[numberOfPhilosophers];
 		chopsticks = new boolean[numberOfPhilosophers];
@@ -92,7 +94,7 @@ public class Monitor
 	public synchronized void requestTalk(int piTID )
 	{
 		int iD = piTID - 1;
-		while(talking) {
+		while(talking || state[iD]==State.EATING) {
 			try {
 				wait();
 			} catch (InterruptedException e) {
@@ -114,6 +116,45 @@ public class Monitor
 		int iD = piTID - 1;
 		talking = false;
 		state[iD] = State.THINKING;
+		notifyAll();
+	}
+
+	// Task 5 - Complete the requestPepper() method
+	public synchronized void requestPepper(int piTID)
+	{
+		int iD = piTID - 1; 
+		while(state[iD] != State.EATING && (!pepper[0] || !pepper[1]) ) {
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		if(pepper[0] && state[iD] == State.EATING){
+			pepper[0] = false;
+			shakerAssignedTo[0]= iD;
+
+		}
+		else if(pepper[1] && state[iD] == State.EATING){
+			pepper[1] = false;
+			shakerAssignedTo[1]= iD;
+		}
+
+	}
+	
+	// Task 5 - Complete the releasePepper() method
+	public synchronized void releasePepper(int piTID)
+	{
+		int iD = piTID - 1;
+		if(shakerAssignedTo[0] == iD){
+			pepper[0] = true;
+			shakerAssignedTo[0] = -1;
+		}
+		else if(shakerAssignedTo[1] == iD){
+			pepper[1] = true;
+			shakerAssignedTo[1] = -1;
+		}
+
 		notifyAll();
 	}
 	
