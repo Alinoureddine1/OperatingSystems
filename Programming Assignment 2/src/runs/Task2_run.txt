@@ -1,0 +1,177 @@
+Enter the number of philosophers (>=3): x
+x is not an acceptable number. The number has to be positive (greater than or equal to 3).
+Enter the number of philosophers (>=3): xs
+xs is not an acceptable number. The number has to be positive (greater than or equal to 3).
+Enter the number of philosophers (>=3): 1
+Invalid input. The number has to be greater than or equal to 3.
+Enter the number of philosophers (>=3): 3
+3 philosopher(s) came in for a dinner.
+Philosopher 1 has started eating
+Philosopher 1 has finished eating
+Philosopher 2 has started eating
+Philosopher 1 has started thinking
+Philosopher 1 has finished thinking
+Philosopher 2 has finished eating
+Philosopher 2 has started thinking
+Philosopher 3 has started eating
+Philosopher 3 has finished eating
+Philosopher 3 has started thinking
+Philosopher 1 has started eating
+Philosopher 2 has finished thinking
+Philosopher 2 has started talking
+Philosopher 2 says: If thee cannot speak, thee must be silent
+Philosopher 2 has finished talking
+Philosopher 3 has finished thinking
+Philosopher 3 has started talking
+Philosopher 3 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher 3 has finished talking
+Philosopher 1 has finished eating
+Philosopher 1 has started thinking
+Philosopher 3 has started eating
+Philosopher 3 has finished eating
+Philosopher 3 has started thinking
+Philosopher 2 has started eating
+Philosopher 1 has finished thinking
+Philosopher 1 has started talking
+Philosopher 1 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher 1 has finished talking
+Philosopher 2 has finished eating
+Philosopher 2 has started thinking
+Philosopher 1 has started eating
+Philosopher 3 has finished thinking
+Philosopher 2 has finished thinking
+Philosopher 2 has started talking
+Philosopher 2 says: If thee cannot speak, thee must be silent
+Philosopher 2 has finished talking
+Philosopher 1 has finished eating
+Philosopher 1 has started thinking
+Philosopher 2 has started eating
+Philosopher 2 has finished eating
+Philosopher 2 has started thinking
+Philosopher 3 has started eating
+Philosopher 3 has finished eating
+Philosopher 3 has started thinking
+Philosopher 1 has finished thinking
+Philosopher 1 has started talking
+Philosopher 1 says: You know, true is false and false is true if you think of it
+Philosopher 1 has finished talking
+Philosopher 1 has started eating
+Philosopher 3 has finished thinking
+Philosopher 1 has finished eating
+Philosopher 1 has started thinking
+Philosopher 3 has started eating
+Philosopher 1 has finished thinking
+Philosopher 3 has finished eating
+Philosopher 3 has started thinking
+Philosopher 1 has started eating
+Philosopher 2 has finished thinking
+Philosopher 1 has finished eating
+Philosopher 1 has started thinking
+Philosopher 2 has started eating
+Philosopher 2 has finished eating
+Philosopher 2 has started thinking
+Philosopher 2 has finished thinking
+Philosopher 2 has started eating
+Philosopher 2 has finished eating
+Philosopher 2 has started thinking
+Philosopher 3 has finished thinking
+Philosopher 3 has started talking
+Philosopher 3 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher 3 has finished talking
+Philosopher 3 has started eating
+Philosopher 2 has finished thinking
+Philosopher 2 has started talking
+Philosopher 2 says: If thee cannot speak, thee must be silent
+Philosopher 2 has finished talking
+Philosopher 1 has finished thinking
+Philosopher 1 has started talking
+Philosopher 1 says: If thee cannot speak, thee must be silent
+Philosopher 1 has finished talking
+Philosopher 3 has finished eating
+Philosopher 3 has started thinking
+Philosopher 1 has started eating
+Philosopher 1 has finished eating
+Philosopher 1 has started thinking
+Philosopher 2 has started eating
+Philosopher 3 has finished thinking
+Philosopher 3 has started talking
+Philosopher 3 says: If thee cannot speak, thee must be silent
+Philosopher 3 has finished talking
+Philosopher 2 has finished eating
+Philosopher 2 has started thinking
+Philosopher 3 has started eating
+Philosopher 3 has finished eating
+Philosopher 3 has started thinking
+Philosopher 2 has finished thinking
+Philosopher 2 has started talking
+Philosopher 2 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher 2 has finished talking
+Philosopher 2 has started eating
+Philosopher 1 has finished thinking
+Philosopher 1 has started talking
+Philosopher 1 says: You know, true is false and false is true if you think of it
+Philosopher 1 has finished talking
+Philosopher 3 has finished thinking
+Philosopher 3 has started talking
+Philosopher 3 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher 3 has finished talking
+Philosopher 2 has finished eating
+Philosopher 2 has started thinking
+Philosopher 3 has started eating
+Philosopher 2 has finished thinking
+Philosopher 3 has finished eating
+Philosopher 1 has started eating
+Philosopher 3 has started thinking
+Philosopher 1 has finished eating
+Philosopher 1 has started thinking
+Philosopher 2 has started eating
+Philosopher 2 has finished eating
+Philosopher 2 has started thinking
+Philosopher 3 has finished thinking
+Philosopher 3 has started eating
+Philosopher 3 has finished eating
+Philosopher 3 has started thinking
+Philosopher 1 has finished thinking
+Philosopher 1 has started talking
+Philosopher 1 says: You know, true is false and false is true if you think of it
+Philosopher 1 has finished talking
+Philosopher 1 has started eating
+Philosopher 2 has finished thinking
+Philosopher 1 has finished eating
+Philosopher 1 has started thinking
+Philosopher 2 has started eating
+Philosopher 3 has finished thinking
+Philosopher 2 has finished eating
+Philosopher 2 has started thinking
+Philosopher 3 has started eating
+Philosopher 2 has finished thinking
+Philosopher 1 has finished thinking
+Philosopher 1 has started talking
+Philosopher 1 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher 1 has finished talking
+Philosopher 3 has finished eating
+Philosopher 3 has started thinking
+Philosopher 1 has started eating
+Philosopher 3 has finished thinking
+Philosopher 3 has started talking
+Philosopher 3 says: If thee cannot speak, thee must be silent
+Philosopher 3 has finished talking
+Philosopher 1 has finished eating
+Philosopher 1 has started thinking
+Philosopher 3 has started eating
+Philosopher 3 has finished eating
+Philosopher 3 has started thinking
+Philosopher 2 has started eating
+Philosopher 1 has finished thinking
+Philosopher 1 has started talking
+Philosopher 1 says: Eh, it's not easy to be a philosopher: eat, think, talk, eat...
+Philosopher 1 has finished talking
+Philosopher 3 has finished thinking
+Philosopher 2 has finished eating
+Philosopher 2 has started thinking
+Philosopher 1 has started eating
+Philosopher 1 has finished eating
+Philosopher 1 has started thinking
+Philosopher 2 has finished thinking
+Philosopher 1 has finished thinking
+All philosophers have left. System terminates normally.

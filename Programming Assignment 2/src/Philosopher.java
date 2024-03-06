@@ -110,11 +110,11 @@ public class Philosopher extends BaseThread
 
 			think();
 
-			
+			// Task 2 - Fixed the TID input
 			if(Math.random() > 0.5){
-				DiningPhilosophers.soMonitor.requestTalk();
+				DiningPhilosophers.soMonitor.requestTalk(getTID());
 				talk();
-				DiningPhilosophers.soMonitor.endTalk();
+				DiningPhilosophers.soMonitor.endTalk(getTID());
 			}
 
 			yield();

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Class DiningPhilosophers
  * The main starter.
@@ -48,7 +50,28 @@ public class DiningPhilosophers
 			 * Should be settable from the command line
 			 * or the default if no arguments supplied.
 			 */
-			int iPhilosophers = DEFAULT_NUMBER_OF_PHILOSOPHERS;
+
+			 // Task 3 - Allow the number of philosophers to be set from the command line
+			int iPhilosophers;
+			Scanner scanner = new Scanner(System.in);
+			while(true){
+				System.out.print("Enter the number of philosophers (>=3): ");
+				if(scanner.hasNextInt()){
+					iPhilosophers = scanner.nextInt();
+					if(iPhilosophers >= 3){
+						break;
+					}
+					else{
+						System.out.println("Invalid input. The number has to be greater than or equal to 3.");
+					}
+				}else{
+					System.out.println(scanner.next() + " is not an acceptable input. The number has to be positive and greater than or equal to 3.");
+					
+				}
+
+			}
+			scanner.close();
+
 
 			// Make the monitor aware of how many philosophers there are
 			soMonitor = new Monitor(iPhilosophers);
