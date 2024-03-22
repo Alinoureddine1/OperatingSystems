@@ -9,6 +9,13 @@
             "name": "DiningPhilosophers",
             "request": "launch",
             "mainClass": "DiningPhilosophers",
+            "projectName": "OperatingSystems_21389e5a"
+        },
+        {
+            "type": "java",
+            "name": "DiningPhilosophers",
+            "request": "launch",
+            "mainClass": "DiningPhilosophers",
             "projectName": "OperatingSystems_3f2e3f02"
         },
         {

@@ -38,9 +38,9 @@ public class Philosopher extends BaseThread
 				DiningPhilosophers.soMonitor.releasePepper(getTID());
 				System.out.println("Philosopher " + getTID() + " has finished using the pepper shaker");
 			}
-			yield();
+			Thread.yield();
 			sleep((long)(Math.random() * TIME_TO_WASTE));
-			yield();
+			Thread.yield();
 			
 			
 			System.out.println("Philosopher " + getTID() + " has finished eating");
@@ -69,9 +69,9 @@ public class Philosopher extends BaseThread
 		try
 		{
 			System.out.println("Philosopher " + getTID() + " has started thinking");
-			yield();
+			Thread.yield();
 			sleep((long)(Math.random() * TIME_TO_WASTE));
-			yield();
+			Thread.yield();
 			System.out.println("Philosopher " + getTID() + " has finished thinking");
 		}
 		catch(InterruptedException e)
@@ -96,9 +96,9 @@ public class Philosopher extends BaseThread
 	public void talk()
 	{
 		System.out.println("Philosopher " + getTID() + " has started talking");
-		yield();
+		Thread.yield();
 		saySomething();
-		yield();
+		Thread.yield();
 		System.out.println("Philosopher " + getTID() + " has finished talking");
 		
 	}
@@ -112,9 +112,9 @@ public class Philosopher extends BaseThread
 	 public void usePepperShaker(){
 		System.out.println("Philosopher " + getTID() + " has used the pepper shaker");
 		try{
-			yield();
+			Thread.yield();
 			Thread.sleep((long)(Math.random() * TIME_TO_WASTE/2));
-			yield();
+			Thread.yield();
 		} catch(InterruptedException e){
 			System.err.println("Philosopher.usePepperShaker():");
 			DiningPhilosophers.reportException(e);
@@ -142,7 +142,7 @@ public class Philosopher extends BaseThread
 				talk();
 				DiningPhilosophers.soMonitor.endTalk(getTID());
 			}
-			yield();
+			Thread.yield();
 		}
 	} // run()
 
