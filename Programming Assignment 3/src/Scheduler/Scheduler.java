@@ -31,7 +31,9 @@ public class Scheduler extends Thread {
                 if (parts.length == 2) {
                     int arrivalTime = Integer.parseInt(parts[0]);
                     int burstTime = Integer.parseInt(parts[1]);
-                    processes.add(new Process(processes.size() + 1, arrivalTime, burstTime));
+                    // Create a new process and add it to the list
+                    Process process = new Process(processes.size() + 1, arrivalTime, burstTime);
+                    processes.add(process);
                 }
             });
         } catch (Exception e) {
@@ -74,10 +76,12 @@ public class Scheduler extends Thread {
 
             if(!currentProcess.isStarted()){
                 currentProcess.setStarted(true);
+                currentProcess.start();
                 currentProcess.setWaitingTime(currentTime - currentProcess.getArrivalTime());
                 writeToFile("Time "+ currentTime + " Process "+ currentProcess.getId() + " Started\n");
             
             }else{
+                currentProcess.resumeProcess();
                 writeToFile("Time "+ currentTime + " Process "+ currentProcess.getId() + " Resumed\n");
                 currentProcess.setWaitingTime( currentProcess.getWaitingTime() + currentTime - currentProcess.getLastTimePoked());
             }
@@ -90,6 +94,7 @@ public class Scheduler extends Thread {
             currentProcess.setRemainingTime(currentProcess.getRemainingTime() - executionTime);
 
             if (currentProcess.getRemainingTime() > 0) {
+                currentProcess.pause();
                 writeToFile("Time " + currentTime + " Process " + currentProcess.getId() + " Paused\n");
                 currentProcess.setLastTimePoked(currentTime);
                 readyQueue.add(currentProcess);
@@ -101,6 +106,7 @@ public class Scheduler extends Thread {
     }
     printWaitingTimes();
     closeWriter();
+    System.out.println("Scheduler Finished");
 }
 
 private void printWaitingTimes() {
